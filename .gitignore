@@ -1,0 +1,5 @@
+*.iso
+*.qcow2
+*.qcow2.gz
+*.raw
+*.raw.gz
