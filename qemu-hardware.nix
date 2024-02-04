@@ -1,10 +1,16 @@
-{ config, lib, pkgs, ... }: {
-  boot.loader.grub.device = "/dev/sda";
+{
+  boot.growPartition = true;
+  boot.loader.grub.device = "/dev/vda";
+  boot.initrd.kernelModules = [
+    "ext4"
+    "virtio"
+    "virtio_blk"
+    "virtio_pci"
+  ];
 
-  fileSystems = {
-    "/" = {
-        device = "/dev/disk/by-label/nixos";
-        fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/vda1";
+    autoResize = true;
+    fsType = "ext4";
   };
 }
