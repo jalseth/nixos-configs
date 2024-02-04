@@ -46,6 +46,12 @@
     ];
   };
 
+  # Allow wheel to manage NixOS.
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+  ];
+
   # Configure nftables firewall.
   networking.nftables.enable = true;
   networking.firewall = {

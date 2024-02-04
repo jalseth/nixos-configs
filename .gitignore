@@ -3,3 +3,6 @@
 *.qcow2.gz
 *.raw
 *.raw.gz
+*.vma
+*.vma.gz
+*.vma.zst
